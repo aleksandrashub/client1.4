@@ -1,0 +1,117 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="shubenokClient.MainWindow"
+        Title="ShubenokClient">
+	<Grid
+		Grid.RowDefinitions="200, *"
+		Grid.ColumnDefinitions="200, 200, 150">
+		<StackPanel
+			Grid.Row="0"
+			Grid.Column="0">
+			<Button
+				Name="addClientBtn"
+				Content="Добавить клиента"
+				Click="AddClient_OnClick">
+			</Button>
+		</StackPanel>
+		<StackPanel
+			Grid.Row="0"
+			Orientation="Vertical"
+			Grid.Column="1">
+			<TextBlock
+			Text="Фильтрация по полу">
+			</TextBlock>
+			<ComboBox
+				MaxDropDownHeight="80">
+				<ComboBoxItem>мужской</ComboBoxItem>
+				<ComboBoxItem>женский</ComboBoxItem>
+				<ComboBoxItem>все</ComboBoxItem>
+			</ComboBox>
+		</StackPanel>
+		<StackPanel
+			Orientation="Vertical"
+			Grid.Row="0"
+			Grid.Column="2">
+			<TextBox
+				Width="180"
+				Height="50"
+				Watermark="Введите значения для поиска">
+			</TextBox>
+			<CheckBox IsChecked="False">
+				Фамилии по алфавиту
+			</CheckBox>
+			<CheckBox IsChecked="False">
+				Даты последнего посещения от новым к старым
+			</CheckBox>
+			<CheckBox IsChecked="False">
+				Количество посещений от большего к меньшему
+			</CheckBox>
+		</StackPanel>
+		<StackPanel
+			Grid.Row="1"
+			Grid.Column="0"
+			Grid.ColumnSpan="3">
+			<ListBox Name="clientsListBox">
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+					<Grid
+						RowDefinitions="*,*"
+						ColumnDefinitions="*, 4*, *">
+						<StackPanel
+							Grid.Row="0"
+							Grid.RowSpan="2"
+							Grid.Column="0">
+							<Image
+								Name="clientImg">
+							</Image>
+						</StackPanel>
+						<StackPanel
+							Orientation="Vertical"
+							Grid.Row="0"
+							Grid.RowSpan="2"
+							Grid.Column="1">
+							<TextBlock 
+								Name="fioTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="genderTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="mailTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="phoneTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="birthdayTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="dateRegTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="dateLastTextBlock">
+							</TextBlock>
+							<TextBlock
+								Name="tags">
+							</TextBlock>
+						</StackPanel>
+						
+						
+						
+						
+						
+						</Grid>
+						
+						
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+				
+
+			</StackPanel>
+		
+	</Grid>
+</Window>
