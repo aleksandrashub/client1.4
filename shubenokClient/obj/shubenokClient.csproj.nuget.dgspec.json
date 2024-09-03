@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\prdb\\source\\repos\\shubenokClient\\shubenokClient\\shubenokClient.csproj": {}
+    "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\shubenokClient.csproj": {}
   },
   "projects": {
-    "C:\\Users\\prdb\\source\\repos\\shubenokClient\\shubenokClient\\shubenokClient.csproj": {
+    "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\shubenokClient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\prdb\\source\\repos\\shubenokClient\\shubenokClient\\shubenokClient.csproj",
+        "projectUniqueName": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\shubenokClient.csproj",
         "projectName": "shubenokClient",
-        "projectPath": "C:\\Users\\prdb\\source\\repos\\shubenokClient\\shubenokClient\\shubenokClient.csproj",
+        "projectPath": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\shubenokClient.csproj",
         "packagesPath": "C:\\Users\\prdb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\prdb\\source\\repos\\shubenokClient\\shubenokClient\\obj\\",
+        "outputPath": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prdb\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,8 +21,7 @@
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\prdb\\Desktop\\Test": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -64,6 +63,42 @@
             "Avalonia.Themes.Fluent": {
               "target": "Package",
               "version": "[11.0.10, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.CodeAnalysis.CSharp.Scripting": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.CodeAnalysis.Common": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             }
           },
           "imports": [
