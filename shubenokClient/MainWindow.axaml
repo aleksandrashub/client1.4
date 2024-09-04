@@ -5,9 +5,11 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="shubenokClient.MainWindow"
         Title="ShubenokClient">
+	<ScrollViewer>
 	<Grid
 		Grid.RowDefinitions="200, *"
 		Grid.ColumnDefinitions="200, 300, *">
+		
 		<StackPanel
 			Grid.Row="0"
 			Grid.Column="0">
@@ -22,6 +24,47 @@
 				Name="birthdayCurrMonth">
 				День рождения в текущем месяце
 			</CheckBox>
+			<TextBlock
+				Margin="20, 40, 0, 0"
+				TextWrapping="Wrap"
+				Text="Укажите количество клиентов на странице:">
+			</TextBlock>
+			<StackPanel
+				Margin="20, 0, 0, 0"
+				Orientation="Horizontal">
+
+				<RadioButton
+					Click="tenPages_Click"
+					Name="tenPages"
+				IsChecked="False"
+				GroupName="Pages"
+				Content="10">
+			</RadioButton>
+				<RadioButton
+					Click="fiftyPages_Click"
+					Name="fiftyPages"
+					IsChecked="False"
+					Margin="20, 0, 0, 0"
+				GroupName="Pages"
+				Content="50">
+			</RadioButton>
+				<RadioButton
+					Click="twohundredPages_Click"
+					Name="twohundredPages"
+					IsChecked="False"
+					Margin="20, 0, 0, 0"
+				GroupName="Pages"
+				Content="200">
+			</RadioButton>
+				<RadioButton
+					Click="allPages_Click"
+					Name="allPages"
+					IsChecked="False"
+					Margin="20, 0, 0, 0"
+				GroupName="Pages"
+				Content="все">
+				</RadioButton>
+				</StackPanel>
 		</StackPanel>
 		<StackPanel
 			HorizontalAlignment="Center"
@@ -63,6 +106,7 @@
 			Grid.Row="0"
 			Grid.Column="2">
 			<TextBox
+				Name="searchString"
 				Width="270"
 				Height="40"
 				Watermark="Введите значения для поиска">
@@ -72,10 +116,17 @@
 			Grid.Row="1"
 			Grid.Column="0"
 			Grid.ColumnSpan="3">
-			<ListBox Name="clientsListBox"
+			
+				<ListBox
+					Height="400"
+					Name="clientsListBox"
 					 Background="AliceBlue">
+					
 				<ListBox.ItemTemplate>
-					<DataTemplate>
+					
+					<DataTemplate
+						x:CompileBindings="False">
+						<ScrollViewer>
 					<Grid
 						RowDefinitions="*,*"
 						ColumnDefinitions="*, 4*, *">
@@ -92,30 +143,121 @@
 							Grid.Row="0"
 							Grid.RowSpan="2"
 							Grid.Column="1">
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Id ">
+								</TextBlock>
+								<TextBlock
+									Text="{Binding Path=IdClient}"
+									Name="idTextBlock">
+								</TextBlock>
+								<TextBlock
+									Text="Имя ">
+								</TextBlock>
 							<TextBlock 
-								Name="fioTextBlock">
+								Text="{Binding Path=NameClient}"
+								Name="nameTextBlock">
 							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Отчество ">
+								</TextBlock>
 							<TextBlock
+								Text="{Binding Path=OtchestvoCl}"
+								Name="otchestvoTextBlock">
+							</TextBlock>
+							</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Фамилия ">
+								</TextBlock>
+							<TextBlock
+								Text="{Binding Path=SurnameCl}"
+								Name="surnameTextBlock">
+							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Пол ">
+								</TextBlock>
+							<TextBlock
+								Text="{Binding Path=NameGender}"
 								Name="genderTextBlock">
 							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Почта ">
+								</TextBlock>
 							<TextBlock
+								Text="{Binding Path=Mail}"
 								Name="mailTextBlock">
 							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Телефон ">
+								</TextBlock>
 							<TextBlock
+								Text="{Binding Path=Phone}"
 								Name="phoneTextBlock">
 							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="День рождения ">
+								</TextBlock>
 							<TextBlock
+								Text="{Binding Path=Birthday}"
 								Name="birthdayTextBlock">
 							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Дата регистрации ">
+								</TextBlock>
 							<TextBlock
+								Text="{Binding Path=DateReg}"
 								Name="dateRegTextBlock">
 							</TextBlock>
-							<TextBlock
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Дата последнего посещения ">
+								</TextBlock>
+								<TextBlock
+								Text="{Binding Path=LastVisit}"
 								Name="dateLastTextBlock">
 							</TextBlock>
+								</StackPanel>
+
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Тэги ">
+								</TextBlock>
 							<TextBlock
 								Name="tags">
 							</TextBlock>
+								</StackPanel>
 						</StackPanel>
 						<StackPanel
 							Grid.Column="2"
@@ -135,10 +277,29 @@
 								Click="DeleteClientBtn_OnClick">
 							</Button>
 						</StackPanel>
+
+					
 						</Grid>
+						</ScrollViewer>
 					</DataTemplate>
+				
 				</ListBox.ItemTemplate>
 			</ListBox>
+			
+			<StackPanel
+				Orientation="Horizontal">
+				<Button
+					Name="backBtn"
+					Click="PrevPage_OnClick"
+					Content="На предыдущую">
+				</Button>
+				<Button
+					Name="nextBtn"
+					Click="NextPage_OnClick"
+					Content="На следующую">
+				</Button>
+			</StackPanel>
 			</StackPanel>
 	</Grid>
+	</ScrollViewer>
 </Window>
