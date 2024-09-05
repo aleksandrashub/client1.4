@@ -32,4 +32,5 @@ public partial class Client
     public virtual Gender? IdGenderNavigation { get; set; }
 
     public virtual ICollection<Visit> Visits { get; set; } = new List<Visit>();
+
 }

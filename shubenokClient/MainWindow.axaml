@@ -77,6 +77,7 @@
 			<ComboBox
 				Name="filterCmb"
 				Width="120"
+				SelectionChanged="GenderCmb_SelectionChanged"
 				MaxDropDownHeight="100">
 				<ComboBoxItem>мужской</ComboBoxItem>
 				<ComboBoxItem>женский</ComboBoxItem>
@@ -87,6 +88,7 @@
 				Text="Сортировка">
 			</TextBlock>
 			<ComboBox
+				SelectionChanged="Sorts_SelectionChanged"
 				Width="120"
 				Name="sortCmb">
 				<ComboBoxItem>
@@ -248,6 +250,16 @@
 								Name="dateLastTextBlock">
 							</TextBlock>
 								</StackPanel>
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="Количество посещений ">
+								</TextBlock>
+								<TextBlock
+								Text="{Binding Path=NumbOfVisits}"
+								Name="numVisitTextBlock">
+								</TextBlock>
+							</StackPanel>
 
 							<StackPanel
 								Orientation="Horizontal">
@@ -285,7 +297,18 @@
 				
 				</ListBox.ItemTemplate>
 			</ListBox>
-			
+			<StackPanel
+				Orientation="Horizontal">
+				<TextBlock
+				Name="currpageNumber">
+				</TextBlock>
+				<TextBlock
+					Text=" / ">
+				</TextBlock>
+			<TextBlock
+				Name="allpageNumber">
+				</TextBlock>
+				</StackPanel>
 			<StackPanel
 				Orientation="Horizontal">
 				<Button
