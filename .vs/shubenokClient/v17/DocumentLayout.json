@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\prdb\\Desktop\\shubenokClient\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|c:\\users\\prdb\\desktop\\shubenokclient\\shubenokclient\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|c:\\users\\prdb\\desktop\\shubenokclient\\shubenokclient\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\context\\user724context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\context\\user724context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\addclient.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\addclient.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\editclient.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\editclient.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\editclient.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\editclient.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\addclient.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
@@ -35,20 +43,12 @@
       "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\models\\gender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\models\\visit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\context\\user724context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\context\\user724context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\editclient.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\editclient.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokclient\\editclient.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
-      "RelativeMoniker": "D:0:0:{690DF2A2-F459-42B3-AD87-8DBC006EE251}|shubenokClient\\shubenokClient.csproj|solutionrelative:shubenokclient\\editclient.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,17 +58,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.axaml.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "shubenokClient\\MainWindow.axaml.cs",
               "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\MainWindow.axaml.cs",
               "RelativeToolTip": "shubenokClient\\MainWindow.axaml.cs",
-              "ViewState": "AQIAAPABAAAAAAAAAAAUwAUCAABhAAAA",
+              "ViewState": "AQIAAOoBAAAAAAAAAAAowAACAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-02T10:42:05.451Z",
               "IsPinned": true,
@@ -84,90 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Gender.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Gender.cs",
-              "RelativeDocumentMoniker": "shubenokClient\\Models\\Gender.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Gender.cs",
-              "RelativeToolTip": "shubenokClient\\Models\\Gender.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T13:07:39.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "shubenokClient\\Models\\Client.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Client.cs",
-              "RelativeToolTip": "shubenokClient\\Models\\Client.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAuwCIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T11:45:10.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "User724Context.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Context\\User724Context.cs",
-              "RelativeDocumentMoniker": "shubenokClient\\Context\\User724Context.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Context\\User724Context.cs",
-              "RelativeToolTip": "shubenokClient\\Context\\User724Context.cs",
-              "ViewState": "AQIAAFUAAAAAAAAAAAAYwFEAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T11:18:23.737Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "EditClient.axaml",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml",
-              "RelativeDocumentMoniker": "shubenokClient\\EditClient.axaml",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml",
-              "RelativeToolTip": "shubenokClient\\EditClient.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-03T08:01:13.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "EditClient.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml.cs",
-              "RelativeDocumentMoniker": "shubenokClient\\EditClient.axaml.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml.cs",
-              "RelativeToolTip": "shubenokClient\\EditClient.axaml.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T08:01:13.376Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddClient.axaml",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\AddClient.axaml",
-              "RelativeDocumentMoniker": "shubenokClient\\AddClient.axaml",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\AddClient.axaml",
-              "RelativeToolTip": "shubenokClient\\AddClient.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-03T07:15:25.474Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "addClient.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\addClient.axaml.cs",
-              "RelativeDocumentMoniker": "shubenokClient\\addClient.axaml.cs",
-              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\addClient.axaml.cs",
-              "RelativeToolTip": "shubenokClient\\addClient.axaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T07:15:25.381Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.axaml",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\MainWindow.axaml",
               "RelativeDocumentMoniker": "shubenokClient\\MainWindow.axaml",
@@ -179,7 +96,96 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "Gender.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Gender.cs",
+              "RelativeDocumentMoniker": "shubenokClient\\Models\\Gender.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Gender.cs",
+              "RelativeToolTip": "shubenokClient\\Models\\Gender.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T13:07:39.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "shubenokClient\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Client.cs",
+              "RelativeToolTip": "shubenokClient\\Models\\Client.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAcwB0AAABbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T11:45:10.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User724Context.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Context\\User724Context.cs",
+              "RelativeDocumentMoniker": "shubenokClient\\Context\\User724Context.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Context\\User724Context.cs",
+              "RelativeToolTip": "shubenokClient\\Context\\User724Context.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAYwFEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T11:18:23.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditClient.axaml",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml",
+              "RelativeDocumentMoniker": "shubenokClient\\EditClient.axaml",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml",
+              "RelativeToolTip": "shubenokClient\\EditClient.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-03T08:01:13.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EditClient.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml.cs",
+              "RelativeDocumentMoniker": "shubenokClient\\EditClient.axaml.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\EditClient.axaml.cs",
+              "RelativeToolTip": "shubenokClient\\EditClient.axaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:01:13.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddClient.axaml",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\AddClient.axaml",
+              "RelativeDocumentMoniker": "shubenokClient\\AddClient.axaml",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\AddClient.axaml",
+              "RelativeToolTip": "shubenokClient\\AddClient.axaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-03T07:15:25.474Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "addClient.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\addClient.axaml.cs",
+              "RelativeDocumentMoniker": "shubenokClient\\addClient.axaml.cs",
+              "ToolTip": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\addClient.axaml.cs",
+              "RelativeToolTip": "shubenokClient\\addClient.axaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T07:15:25.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Visit.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Models\\Visit.cs",
               "RelativeDocumentMoniker": "shubenokClient\\Models\\Visit.cs",
@@ -192,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Program.cs",
               "RelativeDocumentMoniker": "shubenokClient\\Program.cs",
@@ -200,11 +206,12 @@
               "RelativeToolTip": "shubenokClient\\Program.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAmwAsAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T11:44:32.758Z"
+              "WhenOpened": "2024-09-03T11:44:32.758Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "Helper.cs",
               "DocumentMoniker": "C:\\Users\\prdb\\Desktop\\shubenokClient\\shubenokClient\\Helper.cs",
               "RelativeDocumentMoniker": "shubenokClient\\Helper.cs",

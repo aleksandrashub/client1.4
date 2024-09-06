@@ -1,10 +1,14 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media.Imaging;
 using Metsys.Bson;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using shubenokClient.Context;
 using shubenokClient.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace shubenokClient
@@ -28,8 +32,9 @@ namespace shubenokClient
         {
             int currPg = Convert.ToInt32(currpageNumber.Text);
             int pgNum = Convert.ToInt32(allpageNumber.Text);
-           
-            
+
+
+            clients = Helper.User724Context.Clients.Include(x => x.ClientTags).ToList();
             switch (filterCmb.SelectedIndex)
             {
                 case 0: 
@@ -40,7 +45,7 @@ namespace shubenokClient
                     break;
                 case 2:
                 default:
-                    clients = Helper.User724Context.Clients.ToList();
+                    clients = clients;
                     break;
             }
 
@@ -50,73 +55,84 @@ namespace shubenokClient
                     clients = clients.OrderBy(a => a.SurnameCl).ToList();
                     break; 
                 case 1:
-                    List<Visit> visits;
-                    List<int> numVisits = new List<int>();
-                    foreach (Client client in clients)
+                    visits = Helper.User724Context.Visits.ToList();
+                    List<string> lastvisits = new List<string>();
+                    clients.Select(x => new
                     {
-                        visits = Helper.User724Context.Visits.Where(x => x.IdClient == client.IdClient).ToList();
-                        numVisits.Add(visits.Count);
+                        x.IdClient,
+                        x.NameClient,
+                        x.SurnameCl,
+                        x.OtchestvoCl,
+                        x.Mail,
+                        x.Phone,
+                        idcl = x.IdClient,
+                        x.Birthday,
+                        x.Photo,
+                        x.IdGenderNavigation.NameGender,
+                        x.DateReg,
+                        NumbOfVisits = Helper.User724Context.Visits.Where(n => n.IdClient == x.IdClient).Select(n => n.TimedateVisit).Count().ToString(),
+                        LastVisit = TimeSet(x.IdClient),
+                        
 
-                    }
-                    for (int i = 0; i < numVisits.Count; i++)
+                    }) ;
+                    foreach (Client c in clients)
                     {
-                        for (int j = 0; j < numVisits.Count - 1; j++)
+                        string lastVisit = TimeSet(c.IdClient);
+                        lastvisits.Add(lastVisit);
+                    }
+                    string temp;
+                 /*   for (int i = 0; i < lastvisits.Count-1; i++)
+                    {
+                        for (int j = i+1; j < lastvisits.Count; j++)
                         {
-                            if (numVisits[j] > numVisits[j+1])
-                            {
-                                Client temp = clients[j];
-                                clients[j] = clients[j+1];
-                                clients[j+1] = temp;
+                            DateTime dt1 = DateTime.Parse(lastvisits[i]);
+                            DateTime dt2 = D
+                            if (dt1 < )
+                            { 
+                                temp = lastvisits[i];
+                                lastvisits[i] = lastvisits[j];
+                                lastvisits[j] = temp
+                            
                             }
+
                         }
+                    
                     }
 
 
-                  /*  foreach (int numvisit in numVisits)
-                    visits = Helper.User724Context.Visits.OrderByDescending(x => x.TimedateVisit).ToList();
-                    List<int> clientsIds = new List<int>();*/
-                  //  clientsIds = visits.Select(x => x.IdClient).ToList();  
-                  /*  foreach (Client client in clients)
-                    {
-                       List <Visit> visitsFotOne;
-                        visitsFotOne = Helper.User724Context.Visits.Where(x => x.IdClient == client.IdClient)
-                            .OrderByDescending(x => x.TimedateVisit).ToList();
-                        visits.Add(visitsFotOne[visitsFotOne.Count - 1]);
-
-                       
-                    }*/
-                    
-
-
-
-                   
-                  
-                  //  clients = Helper.User724Context.Clients.Where(x => 
-                  //  x.Visits.OrderByDescending(x => x.TimedateVisit).Select(x => x.TimedateVisit).ToList());
-                  //  clients = Helper.User724Context.Visits.Where(x => ) // дата последнего посещения от новых к старым
-                  //clients.OrderByDescending(x => x.)
+                    clients = clients.OrderBy(x=> x.Las))*/
                     break;
                              
 
                 case 2: //количество посещений от б к м
                     break;
                 default:
-                   // clients = Helper.User724Context.Clients.ToList();
                     break;
             }
 
             string searchText = searchString.Text ?? "";
-            if (!string.IsNullOrEmpty(searchText))
-            { 
-                clients = clients.Where(x => x.NameClient.Contains(searchText) 
-                || x.SurnameCl.Contains(searchText) || x.OtchestvoCl.Contains(searchText)
-                || x.Mail.Contains(searchText) || x.Phone.Contains(searchText)).ToList();
+            int count = searchText.Split(' ').Length;
+            string[] values = new string[count];
+
+            values = searchText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (string s in values)
+            {
+                if (!string.IsNullOrEmpty(s))
+                {
+                    clients = clients.Where(x => x.NameClient.Contains(s)
+                    || x.SurnameCl.Contains(s) || x.OtchestvoCl.Contains(s)
+                    || x.Mail.Contains(s) || x.Phone.Contains(s)).ToList();
+                }
+                else
+                {
+                    continue;
+                }
             }
-            int newindex = 0; ;
+            int newindex = 0;
             int newindexD = 0;
             if (tenPages.IsChecked == true) //10 клиентов на странице
             {
-
                 if (nextBack == true) //нажата кнопка вперед
                 {
                     if (selectPg != 10)
@@ -159,7 +175,6 @@ namespace shubenokClient
                     {
                         indexUp = 0;
                         selectPg = 10;
-
                     }
                     else
                     {
@@ -189,7 +204,6 @@ namespace shubenokClient
                         {
                             newindexD = indexDown + 10;
                         }
-
                     }
                     indexDown = newindexD;
                     nextBack = true;
@@ -210,7 +224,8 @@ namespace shubenokClient
 
                 currPg = (int)Math.Ceiling((decimal)clients.IndexOf(clientsOnPage[0]) / 10) + 1;
 
-
+                currentoutput.Text = Convert.ToString((currPg-1) * 10 + clientsOnPage.Count);
+                alloutput.Text = clients.Count.ToString();
                 currpageNumber.Text = currPg.ToString();
                 allpageNumber.Text = pgNum.ToString();
 
@@ -241,7 +256,6 @@ namespace shubenokClient
             }
             else if (fiftyPages.IsChecked == true) //50 клиентов на странице
             {
-
                 if (nextBack == true) //выбрано перейти на след страницу
                 {
                     if (selectPg != 50)
@@ -260,7 +274,6 @@ namespace shubenokClient
                         {
                             indexUp = clients.IndexOf(clientsOnPage[0]);
                         }
-
                     }
 
                     clientsOnPage.Clear();
@@ -279,7 +292,6 @@ namespace shubenokClient
                         {
                             newindex = indexUp + 50;
                         }
-
                     }
                     indexUp = newindex;
 
@@ -322,7 +334,12 @@ namespace shubenokClient
 
                 }
 
+               
                 currPg = (int)Math.Ceiling((decimal)clients.IndexOf(clientsOnPage[0]) / 50) + 1;
+
+                currentoutput.Text = Convert.ToString((currPg - 1) * 50 + clientsOnPage.Count);
+                alloutput.Text = clients.Count.ToString();
+
 
                 currpageNumber.Text = currPg.ToString();
                 allpageNumber.Text = pgNum.ToString();
@@ -404,7 +421,6 @@ namespace shubenokClient
                             break;
 
                         }
-
                         clientsOnPage.Add(clients[j]);
                         if (j == indexDown)
                         {
@@ -431,6 +447,10 @@ namespace shubenokClient
                 }
 
                 currPg = (int)Math.Ceiling((decimal)clients.IndexOf(clientsOnPage[0]) / 200) + 1;
+
+                currentoutput.Text = Convert.ToString((currPg - 1) * 200 + clientsOnPage.Count);
+                alloutput.Text = clients.Count.ToString();
+
 
                 currpageNumber.Text = currPg.ToString();
                 allpageNumber.Text = pgNum.ToString();
@@ -468,10 +488,15 @@ namespace shubenokClient
                 allpageNumber.Text = "1";
                 nextBtn.IsVisible = false;
                 backBtn.IsVisible = false;
+
+                currentoutput.Text = clients.Count.ToString();
+                alloutput.Text = clients.Count.ToString();
+
+
             }
-           
+
             clientsListBox.ItemsSource = clientsOnPage.
-                   Select(x => new 
+                   Select(x => new
                    {
                        x.IdClient,
                        x.NameClient,
@@ -479,50 +504,46 @@ namespace shubenokClient
                        x.OtchestvoCl,
                        x.Mail,
                        x.Phone,
-                       idcl = x.IdClient,
                        x.Birthday,
-                       x.Photo,
                        x.IdGenderNavigation.NameGender,
                        x.DateReg,
-                       NumbOfVisits = Helper.User724Context.Visits.Where(n=> n.IdClient == x.IdClient).Select(n => n.TimedateVisit).Count().ToString(),
-                       LastVisit = TimeSet(x.IdClient)
-                       //LastVisit = Helper.User724Context.Visits.Where(x =>x. x.TimedateVisit).Max(x => x.TimedateVisit).ToString(),
-
+                       PhotoPath = new Bitmap($"Assets/{x.Photo}"), 
+                       NumbOfVisits = Helper.User724Context.Visits.Where(n => n.IdClient == x.IdClient).Select(n => n.TimedateVisit).Count().ToString(),
+                       LastVisit = TimeSet(x.IdClient),
+                      // x.ClientTags
                    });
-
-
-            /*
-                        clientsListBox.Items = clients.
-                            Select(x => new
-                            {
-                                x.IdClient,
-                                x.NameClient,
-                                x.SurnameCl,
-                                x.OtchestvoCl,
-                                x.Phone,
-                                x.Mail,
-                                x.DateReg,
-                                x.Birthday,
-                                x.IdGender
-
-
-
-                            });*/
         }
 
         public string TimeSet(long id)
         {
-            var a = Helper.User724Context.Visits.Where(x => x.IdClient == id).ToList(); ;
+            var a = Helper.User724Context.Visits.Where(x => x.IdClient == id).ToList();
             if (a.Count > 0)
             {
                 return a.OrderBy(x => x.TimedateVisit).Select(n => n.TimedateVisit).LastOrDefault().ToString();
-          
             }
             else
             {
                 return "Не посещал";
             }
         }
+       /* public List <string> TagsSet(long id)
+        {
+            List<> tagsCl = new List<string>();
+            var a = Helper.User724Context.Clients.Join(Helper.User724Context.ClientTags, x => x.IdClient, xt => xt.IdClient,
+                (x, xt) => new { x, xt }).Join(Helper.User724Context.Tags, xtt => xtt.xt.IdTag, t => t.IdTag,
+                (xxt, t) => new { xxt, t }).Select
+                (m => new
+                {
+
+                    idClient = m.xxt.x.IdClient,
+                    idTag = m.t.IdTag,
+
+                }).ToList();
+                
+
+            
+            
+        }*/
 
         public void PrevPage_OnClick(object? sender, RoutedEventArgs args)
         {
@@ -590,6 +611,19 @@ namespace shubenokClient
         private void Sorts_SelectionChanged(object? sender, Avalonia.Controls.SelectionChangedEventArgs e)
         {
             loadServices();
+        }
+
+        private void search_KeyUp(object? sender, Avalonia.Input.KeyEventArgs e)
+        {
+            loadServices();
+
+
+        }
+
+        private void search_KeyDown(object? sender, Avalonia.Input.KeyEventArgs e)
+        {
+            loadServices();
+
         }
     }
 }

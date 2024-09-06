@@ -109,6 +109,7 @@
 			Grid.Column="2">
 			<TextBox
 				Name="searchString"
+				KeyUp="search_KeyUp"
 				Width="270"
 				Height="40"
 				Watermark="Введите значения для поиска">
@@ -137,6 +138,8 @@
 							Grid.RowSpan="2"
 							Grid.Column="0">
 							<Image
+								Width="100"
+								Source="{Binding PhotoPath}"
 								Name="clientImg">
 							</Image>
 						</StackPanel>
@@ -260,22 +263,37 @@
 								Name="numVisitTextBlock">
 								</TextBlock>
 							</StackPanel>
-
 							<StackPanel
 								Orientation="Horizontal">
-								<TextBlock
-									Text="Тэги ">
-								</TextBlock>
 							<TextBlock
-								Name="tags">
+								Text="Тэги ">
 							</TextBlock>
-								</StackPanel>
-						</StackPanel>
+								<ListBox
+									ItemsSource="{Binding ClientTags}"
+									Height="50"
+									Width="200">
+									<ListBox.ItemTemplate>
+										<DataTemplate
+										x:CompileBindings="False">
+											<StackPanel
+											Orientation="Horizontal">
+												<TextBlock
+													Height="40"
+													Width="150"
+													Name="{Binding IdClientTag}" Background="Red">
+												</TextBlock>
+											</StackPanel>
+										</DataTemplate>
+									</ListBox.ItemTemplate>
+								</ListBox>
+							</StackPanel>
+							</StackPanel>
 						<StackPanel
 							Grid.Column="2"
 							Grid.Row="0"
 							VerticalAlignment="Bottom">
 							<Button
+								Content="Редактировать"
 								Name="editBtn"
 								Click="EditClientBtn_OnClick">
 							</Button>
@@ -285,6 +303,7 @@
 							Grid.Row="1"
 							VerticalAlignment="Top">
 							<Button
+								Content="Удалить"
 								Name="deleteBtn"
 								Click="DeleteClientBtn_OnClick">
 							</Button>
@@ -298,6 +317,12 @@
 				</ListBox.ItemTemplate>
 			</ListBox>
 			<StackPanel
+				Orientation="Vertical">
+			<StackPanel
+				Height="30"
+				Width="200"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Left"
 				Orientation="Horizontal">
 				<TextBlock
 				Name="currpageNumber">
@@ -308,6 +333,26 @@
 			<TextBlock
 				Name="allpageNumber">
 				</TextBlock>
+				</StackPanel>
+				<StackPanel
+					Height="30"
+					Width="200"
+					VerticalAlignment="Center"
+					HorizontalAlignment="Left"
+					Orientation="Horizontal">
+					<TextBlock
+						Text="Записей для просмотра">
+						</TextBlock>
+					<TextBlock
+						Name="currentoutput">
+					</TextBlock>
+					<TextBlock
+						Text=" из ">
+					</TextBlock>
+					<TextBlock
+						Name="alloutput">
+						</TextBlock>
+					</StackPanel>
 				</StackPanel>
 			<StackPanel
 				Orientation="Horizontal">
