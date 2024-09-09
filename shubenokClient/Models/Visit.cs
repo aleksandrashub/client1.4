@@ -7,9 +7,9 @@ public partial class Visit
 {
     public long IdClientVisit { get; set; }
 
-    public long IdClient { get; set; }
+    public long? IdClient { get; set; }
 
-    public DateTime TimedateVisit { get; set; }
+    public DateTime? TimedateVisit { get; set; }
 
-    public virtual Client IdClientNavigation { get; set; } = null!;
+    public virtual Client? IdClientNavigation { get; set; }
 }

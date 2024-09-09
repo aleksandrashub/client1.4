@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("shubenokClient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0de8fd7a3cc858f2c7b39302fbf53acc7ab4abd3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+40dd4e25c895683072d07897cd384ac03b45e151")]
 [assembly: System.Reflection.AssemblyProductAttribute("shubenokClient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("shubenokClient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

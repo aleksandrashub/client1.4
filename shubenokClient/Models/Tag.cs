@@ -9,5 +9,7 @@ public partial class Tag
 
     public string? NameTag { get; set; }
 
-    public virtual ICollection<ClientTag> ClientTags { get; set; } = new List<ClientTag>();
+    public string? ColorTag { get; set; }
+
+    public virtual ICollection<Client> IdClients { get; set; } = new List<Client>();
 }

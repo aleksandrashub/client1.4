@@ -13,7 +13,7 @@ public partial class Client
 
     public string? OtchestvoCl { get; set; }
 
-    public int? IdGender { get; set; }
+    public int IdGender { get; set; }
 
     public string? Phone { get; set; }
 
@@ -27,10 +27,9 @@ public partial class Client
 
     public virtual ICollection<ClientFile> ClientFiles { get; set; } = new List<ClientFile>();
 
-    public virtual ICollection<ClientTag> ClientTags { get; set; } = new List<ClientTag>();
-
-    public virtual Gender? IdGenderNavigation { get; set; }
+    public virtual Gender IdGenderNavigation { get; set; } = null!;
 
     public virtual ICollection<Visit> Visits { get; set; } = new List<Visit>();
 
+    public virtual ICollection<Tag> IdTags { get; set; } = new List<Tag>();
 }

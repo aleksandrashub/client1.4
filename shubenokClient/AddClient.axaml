@@ -22,6 +22,7 @@
 				Width="180">
 			</TextBlock>
 			<TextBox
+				Name="surname"
 				Margin="0, 0, 0, 10"
 				Watermark="Фамилия"
 				Width="180">
@@ -32,6 +33,7 @@
 				Width="180">
 			</TextBlock>
 			<TextBox
+				Name="name"
 				Margin="0, 0, 0, 10"
 				Watermark="Имя"
 				Width="180">
@@ -42,6 +44,7 @@
 				Width="180">
 			</TextBlock>
 			<TextBox
+				Name="otchestvo"
 				Margin="0, 0, 0, 10"
 				Watermark="Отчество"
 				Width="180">
@@ -52,6 +55,7 @@
 				Width="180">
 			</TextBlock>
 			<TextBox
+				Name="mail"
 				Margin="0, 0, 0, 10"
 				Watermark="Email"
 				Width="180">
@@ -62,6 +66,7 @@
 				Width="180">
 			</TextBlock>
 			<TextBox
+				Name="phone"
 				Margin="0, 0, 0, 10"
 				Watermark="Мобильный телефон"
 				Width="180">
@@ -76,6 +81,21 @@
 			HorizontalAlignment="Left"
 			Margin="0, 50, 0, 0"
 			Grid.Column="1">
+			<TextBlock
+				Text="Укажите тэги клиента:">
+				</TextBlock>
+			<CheckBox
+				Name="inprocess"
+				Content="В обработке">
+			</CheckBox>
+			<CheckBox
+				Name="denied"
+				Content="Отклонен">
+			</CheckBox>
+			<CheckBox
+				Name="success"
+				Content="Успешно">
+			</CheckBox>
 			<TextBlock
 				Text="Выберите пол:">
 			</TextBlock>

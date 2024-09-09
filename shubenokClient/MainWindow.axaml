@@ -139,7 +139,7 @@
 							Grid.Column="0">
 							<Image
 								Width="100"
-								Source="{Binding PhotoPath}"
+								Source="{Binding Path=PhotoPath}"
 								Name="clientImg">
 							</Image>
 						</StackPanel>
@@ -194,7 +194,7 @@
 									Text="Пол ">
 								</TextBlock>
 							<TextBlock
-								Text="{Binding Path=NameGender}"
+								Text="{Binding Path=Gender}"
 								Name="genderTextBlock">
 							</TextBlock>
 								</StackPanel>
@@ -269,19 +269,33 @@
 								Text="Тэги ">
 							</TextBlock>
 								<ListBox
-									ItemsSource="{Binding ClientTags}"
-									Height="50"
-									Width="200">
+									Name="statusListB"
+									ItemsSource="{Binding IdTags}"
+									Height="40"
+									HorizontalAlignment="Center"
+									VerticalAlignment="Center"
+									Width="120">
 									<ListBox.ItemTemplate>
 										<DataTemplate
 										x:CompileBindings="False">
 											<StackPanel
+												HorizontalAlignment="Center"
+												VerticalAlignment="Center"
 											Orientation="Horizontal">
-												<TextBlock
+												<Border
+													HorizontalAlignment="Center"
+												VerticalAlignment="Center"
 													Height="40"
-													Width="150"
-													Name="{Binding IdClientTag}" Background="Red">
+													Background="{Binding ColorTag}"
+													Width="110"
+													CornerRadius="15">
+												<TextBlock 
+													TextAlignment="Center"
+													Height="20"
+													Width="100"
+													Text="{Binding NameTag}">
 												</TextBlock>
+													</Border>
 											</StackPanel>
 										</DataTemplate>
 									</ListBox.ItemTemplate>

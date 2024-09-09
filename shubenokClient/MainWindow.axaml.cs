@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Metsys.Bson;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using shubenokClient.Context;
 using shubenokClient.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 
@@ -18,10 +20,14 @@ namespace shubenokClient
         public bool nextBack = true;
         public int selectPg;
         public  int indexUp;
+        public static List<Gender> genders = Helper.User724Context.Genders.ToList();
+        public static List<Tag> tags = Helper.User724Context.Tags.ToList();
+
+     // public static List<ClientTag> clientTag = Helper.User724Context.Cl.ToList();
         public  int indexDown;
         public static List<Client> clients;
         public static List<Visit> visits;
-        public static List<Gender> genders;
+      //  public static List<Gender> genders;
         public List<Client> clientsOnPage = new List<Client>();
         public MainWindow()
         {
@@ -34,7 +40,8 @@ namespace shubenokClient
             int pgNum = Convert.ToInt32(allpageNumber.Text);
 
 
-            clients = Helper.User724Context.Clients.Include(x => x.ClientTags).ToList();
+            clients = Helper.User724Context.Clients.Include(x => x.IdTags).ToList();
+         
             switch (filterCmb.SelectedIndex)
             {
                 case 0: 
@@ -68,7 +75,7 @@ namespace shubenokClient
                         idcl = x.IdClient,
                         x.Birthday,
                         x.Photo,
-                        x.IdGenderNavigation.NameGender,
+                        Gender = genders[x.IdGender].NameGender,
                         x.DateReg,
                         NumbOfVisits = Helper.User724Context.Visits.Where(n => n.IdClient == x.IdClient).Select(n => n.TimedateVisit).Count().ToString(),
                         LastVisit = TimeSet(x.IdClient),
@@ -494,7 +501,7 @@ namespace shubenokClient
 
 
             }
-
+           
             clientsListBox.ItemsSource = clientsOnPage.
                    Select(x => new
                    {
@@ -505,16 +512,20 @@ namespace shubenokClient
                        x.Mail,
                        x.Phone,
                        x.Birthday,
-                       x.IdGenderNavigation.NameGender,
+                       x.IdGender,
+                       Gender = genders[x.IdGender].NameGender.ToString(),
                        x.DateReg,
-                       PhotoPath = new Bitmap($"Assets/{x.Photo}"), 
+                       PhotoPath = new Bitmap($"Assets/{x.Photo}"),
                        NumbOfVisits = Helper.User724Context.Visits.Where(n => n.IdClient == x.IdClient).Select(n => n.TimedateVisit).Count().ToString(),
                        LastVisit = TimeSet(x.IdClient),
-                      // x.ClientTags
+                       x.IdTags,
+                       
+                      
                    });
+
         }
 
-        public string TimeSet(long id)
+            public string TimeSet(long id)
         {
             var a = Helper.User724Context.Visits.Where(x => x.IdClient == id).ToList();
             if (a.Count > 0)
@@ -526,25 +537,7 @@ namespace shubenokClient
                 return "Не посещал";
             }
         }
-       /* public List <string> TagsSet(long id)
-        {
-            List<> tagsCl = new List<string>();
-            var a = Helper.User724Context.Clients.Join(Helper.User724Context.ClientTags, x => x.IdClient, xt => xt.IdClient,
-                (x, xt) => new { x, xt }).Join(Helper.User724Context.Tags, xtt => xtt.xt.IdTag, t => t.IdTag,
-                (xxt, t) => new { xxt, t }).Select
-                (m => new
-                {
-
-                    idClient = m.xxt.x.IdClient,
-                    idTag = m.t.IdTag,
-
-                }).ToList();
-                
-
-            
-            
-        }*/
-
+        
         public void PrevPage_OnClick(object? sender, RoutedEventArgs args)
         {
             nextBack = false;
@@ -564,7 +557,9 @@ namespace shubenokClient
         }
         public void AddClient_OnClick(object? sender, RoutedEventArgs args)
         {
-            
+            AddClient addClient = new AddClient();
+            addClient.Show();
+            this.Close();
         }
 
         private void EditClientBtn_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

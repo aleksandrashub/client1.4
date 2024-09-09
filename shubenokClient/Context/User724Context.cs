@@ -20,8 +20,6 @@ public partial class User724Context : DbContext
 
     public virtual DbSet<ClientFile> ClientFiles { get; set; }
 
-    public virtual DbSet<ClientTag> ClientTags { get; set; }
-
     public virtual DbSet<Gender> Genders { get; set; }
 
     public virtual DbSet<Tag> Tags { get; set; }
@@ -30,7 +28,7 @@ public partial class User724Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseLazyLoadingProxies().UseNpgsql("Host=192.168.2.159;Database=user724;Username=user724;password=68202");
+        => optionsBuilder.UseNpgsql("Host=192.168.2.159;Database=user724;Username=user724;password=68202");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -67,7 +65,27 @@ public partial class User724Context : DbContext
 
             entity.HasOne(d => d.IdGenderNavigation).WithMany(p => p.Clients)
                 .HasForeignKey(d => d.IdGender)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("clients_gender_fk");
+
+            entity.HasMany(d => d.IdTags).WithMany(p => p.IdClients)
+                .UsingEntity<Dictionary<string, object>>(
+                    "ClientTag",
+                    r => r.HasOne<Tag>().WithMany()
+                        .HasForeignKey("IdTag")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("client_tag_tags_fk"),
+                    l => l.HasOne<Client>().WithMany()
+                        .HasForeignKey("IdClient")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("client_tag_clients_fk"),
+                    j =>
+                    {
+                        j.HasKey("IdClient", "IdTag").HasName("client_tag_pk");
+                        j.ToTable("client_tag");
+                        j.IndexerProperty<long>("IdClient").HasColumnName("id_client");
+                        j.IndexerProperty<int>("IdTag").HasColumnName("id_tag");
+                    });
         });
 
         modelBuilder.Entity<ClientFile>(entity =>
@@ -88,29 +106,6 @@ public partial class User724Context : DbContext
                 .HasForeignKey(d => d.IdClient)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("client_file_clients_fk");
-        });
-
-        modelBuilder.Entity<ClientTag>(entity =>
-        {
-            entity.HasKey(e => e.IdClientTag).HasName("client_tag_pk");
-
-            entity.ToTable("client_tag");
-
-            entity.Property(e => e.IdClientTag)
-                .ValueGeneratedNever()
-                .HasColumnName("id_client_tag");
-            entity.Property(e => e.IdClient).HasColumnName("id_client");
-            entity.Property(e => e.IdTag).HasColumnName("id_tag");
-
-            entity.HasOne(d => d.IdClientNavigation).WithMany(p => p.ClientTags)
-                .HasForeignKey(d => d.IdClient)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("client_tag_clients_fk");
-
-            entity.HasOne(d => d.IdTagNavigation).WithMany(p => p.ClientTags)
-                .HasForeignKey(d => d.IdTag)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("client_tag_tags_fk");
         });
 
         modelBuilder.Entity<Gender>(entity =>
@@ -136,6 +131,9 @@ public partial class User724Context : DbContext
             entity.Property(e => e.IdTag)
                 .ValueGeneratedNever()
                 .HasColumnName("id_tag");
+            entity.Property(e => e.ColorTag)
+                .HasColumnType("character varying")
+                .HasColumnName("color_tag");
             entity.Property(e => e.NameTag)
                 .HasColumnType("character varying")
                 .HasColumnName("name_tag");
@@ -157,7 +155,6 @@ public partial class User724Context : DbContext
 
             entity.HasOne(d => d.IdClientNavigation).WithMany(p => p.Visits)
                 .HasForeignKey(d => d.IdClient)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("visits_clients_fk");
         });
 
