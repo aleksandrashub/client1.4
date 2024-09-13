@@ -311,3 +311,8 @@ C:\Users\prdb\Desktop\shubenokClient\shubenokClient\obj\Debug\net8.0\shubenokCli
 C:\Users\prdb\Desktop\shubenokClient\shubenokClient\obj\Debug\net8.0\shubenok.A488C50F.Up2Date
 C:\Users\prdb\Desktop\shubenokClient\shubenokClient\obj\Debug\net8.0\shubenokClient.genruntimeconfig.cache
 C:\Users\prdb\Desktop\shubenokClient\shubenokClient\obj\Debug\net8.0\ref\shubenokClient.dll
+C:\Users\prdb\Desktop\shubenokClient\shubenokClient\bin\Debug\net8.0\ColorTextBlock.Avalonia.dll
+C:\Users\prdb\Desktop\shubenokClient\shubenokClient\bin\Debug\net8.0\DialogHost.Avalonia.dll
+C:\Users\prdb\Desktop\shubenokClient\shubenokClient\bin\Debug\net8.0\Markdown.Avalonia.dll
+C:\Users\prdb\Desktop\shubenokClient\shubenokClient\bin\Debug\net8.0\MsBox.Avalonia.dll
+C:\Users\prdb\Desktop\shubenokClient\shubenokClient\bin\Debug\net8.0\System.Reactive.dll

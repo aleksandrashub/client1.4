@@ -5,11 +5,11 @@ namespace shubenokClient.Models;
 
 public partial class ClientFile
 {
-    public long IdClientFile { get; set; }
-
-    public long IdClient { get; set; }
-
     public string Filename { get; set; } = null!;
 
-    public virtual Client IdClientNavigation { get; set; } = null!;
+    public int? IdClient { get; set; }
+
+    public int IdClientFile { get; set; }
+
+    public virtual Client? IdClientNavigation { get; set; }
 }

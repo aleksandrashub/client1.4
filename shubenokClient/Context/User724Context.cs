@@ -38,9 +38,7 @@ public partial class User724Context : DbContext
 
             entity.ToTable("clients");
 
-            entity.Property(e => e.IdClient)
-                .ValueGeneratedNever()
-                .HasColumnName("id_client");
+            entity.Property(e => e.IdClient).HasColumnName("id_client");
             entity.Property(e => e.Birthday).HasColumnName("birthday");
             entity.Property(e => e.DateReg).HasColumnName("date_reg");
             entity.Property(e => e.IdGender).HasColumnName("id_gender");
@@ -67,25 +65,6 @@ public partial class User724Context : DbContext
                 .HasForeignKey(d => d.IdGender)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("clients_gender_fk");
-
-            entity.HasMany(d => d.IdTags).WithMany(p => p.IdClients)
-                .UsingEntity<Dictionary<string, object>>(
-                    "ClientTag",
-                    r => r.HasOne<Tag>().WithMany()
-                        .HasForeignKey("IdTag")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("client_tag_tags_fk"),
-                    l => l.HasOne<Client>().WithMany()
-                        .HasForeignKey("IdClient")
-                        .OnDelete(DeleteBehavior.ClientSetNull)
-                        .HasConstraintName("client_tag_clients_fk"),
-                    j =>
-                    {
-                        j.HasKey("IdClient", "IdTag").HasName("client_tag_pk");
-                        j.ToTable("client_tag");
-                        j.IndexerProperty<long>("IdClient").HasColumnName("id_client");
-                        j.IndexerProperty<int>("IdTag").HasColumnName("id_tag");
-                    });
         });
 
         modelBuilder.Entity<ClientFile>(entity =>
@@ -94,9 +73,7 @@ public partial class User724Context : DbContext
 
             entity.ToTable("client_file");
 
-            entity.Property(e => e.IdClientFile)
-                .ValueGeneratedNever()
-                .HasColumnName("id_client_file");
+            entity.Property(e => e.IdClientFile).HasColumnName("id_client_file");
             entity.Property(e => e.Filename)
                 .HasColumnType("character varying")
                 .HasColumnName("filename");
@@ -104,7 +81,6 @@ public partial class User724Context : DbContext
 
             entity.HasOne(d => d.IdClientNavigation).WithMany(p => p.ClientFiles)
                 .HasForeignKey(d => d.IdClient)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("client_file_clients_fk");
         });
 
@@ -137,6 +113,25 @@ public partial class User724Context : DbContext
             entity.Property(e => e.NameTag)
                 .HasColumnType("character varying")
                 .HasColumnName("name_tag");
+
+            entity.HasMany(d => d.IdClients).WithMany(p => p.IdTags)
+                .UsingEntity<Dictionary<string, object>>(
+                    "ClientTag",
+                    r => r.HasOne<Client>().WithMany()
+                        .HasForeignKey("IdClient")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("client_tag_clients_fk"),
+                    l => l.HasOne<Tag>().WithMany()
+                        .HasForeignKey("IdTag")
+                        .OnDelete(DeleteBehavior.ClientSetNull)
+                        .HasConstraintName("client_tag_tags_fk"),
+                    j =>
+                    {
+                        j.HasKey("IdTag", "IdClient").HasName("client_tag_pk");
+                        j.ToTable("client_tag");
+                        j.IndexerProperty<int>("IdTag").HasColumnName("id_tag");
+                        j.IndexerProperty<int>("IdClient").HasColumnName("id_client");
+                    });
         });
 
         modelBuilder.Entity<Visit>(entity =>
@@ -145,9 +140,7 @@ public partial class User724Context : DbContext
 
             entity.ToTable("visits");
 
-            entity.Property(e => e.IdClientVisit)
-                .ValueGeneratedNever()
-                .HasColumnName("id_client_visit");
+            entity.Property(e => e.IdClientVisit).HasColumnName("id_client_visit");
             entity.Property(e => e.IdClient).HasColumnName("id_client");
             entity.Property(e => e.TimedateVisit)
                 .HasColumnType("timestamp without time zone")

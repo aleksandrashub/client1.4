@@ -65,22 +65,70 @@
 				Text="Мобильный телефон"
 				Width="180">
 			</TextBlock>
-			<TextBox
-				Name="phoneEdit"
-				Margin="0, 0, 0, 10"
-				Watermark="Мобильный телефон"
-				Width="180">
-			</TextBox>
+			<TextBlock
+				Width="180"
+				Margin="0, 0, 0, 5"
+				TextAlignment="Justify"
+				TextWrapping="Wrap"
+				Text="Выберите маску оператора (количество цифр):">
+			</TextBlock>
+			<ComboBox
+				SelectedIndex="0"
+				Name="phoneMask"
+				Margin="0, 0, 0, 5"
+				MaxDropDownHeight="60">
+				<ComboBoxItem>2</ComboBoxItem>
+				<ComboBoxItem>3</ComboBoxItem>
+				<ComboBoxItem>4</ComboBoxItem>
+			</ComboBox>
+
+			<MaskedTextBox
+				Name="maskTwo"
+				Height="40"
+				Width="250"
+				Mask="0(00)000-00-00">
+			</MaskedTextBox>
+			<MaskedTextBox
+				Name="maskThree"
+				Height="40"
+				Width="250"
+				Mask="0(000)000-00-00">
+			</MaskedTextBox>
+			<MaskedTextBox
+				Name="maskFour"
+				Height="40"
+				Width="250"
+				Mask="0(0000)000-00-00">
+			</MaskedTextBox>
+
+
+
 			<Button
 				Content="Готово"
 				Click="OkBtn_Click">
 			</Button>
 		</StackPanel>
-		<StackPanel
+		
+			<StackPanel
 			Orientation="Vertical"
 			HorizontalAlignment="Left"
 			Margin="0, 50, 0, 0"
 			Grid.Column="1">
+				<TextBlock
+					Text="Укажите тэги клиента:">
+				</TextBlock>
+				<CheckBox
+					Name="inprocess"
+					Content="В обработке">
+				</CheckBox>
+				<CheckBox
+					Name="denied"
+					Content="Отклонен">
+				</CheckBox>
+				<CheckBox
+					Name="success"
+					Content="Успешно">
+				</CheckBox>
 			<TextBlock
 				Text="Выберите пол:">
 			</TextBlock>

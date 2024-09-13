@@ -41,7 +41,21 @@ namespace shubenokClient
 
 
             clients = Helper.User724Context.Clients.Include(x => x.IdTags).ToList();
-         
+
+            switch (birthdayCurrMonth.IsChecked)
+            {
+                case true:
+                    clients = clients.Where(x => x.Birthday.Value.Month == DateTime.Now.Month).ToList();
+                    break;
+                case false:
+                    clients = clients;
+                    break;
+            
+            
+            
+            }
+
+
             switch (filterCmb.SelectedIndex)
             {
                 case 0: 
@@ -564,10 +578,20 @@ namespace shubenokClient
 
         private void EditClientBtn_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-
+            int ind = (int)((sender as Button)!).Tag!;
+            var cl = Helper.User724Context.Clients.FirstOrDefault(x => x.IdClient == ind);
+            EditClient editClient = new EditClient();
+            //editClient.Edi
+            editClient.Show();
         }
         private void DeleteClientBtn_OnClick(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
+
+            int ind = (int)((sender as Button)!).Tag!;
+           var cl = Helper.User724Context.Clients.FirstOrDefault(x => x.IdClient == ind);
+            Helper.User724Context.Clients.Remove(cl);
+            Helper.User724Context.SaveChanges();
+            loadServices();
 
         }
 
@@ -616,6 +640,12 @@ namespace shubenokClient
         }
 
         private void search_KeyDown(object? sender, Avalonia.Input.KeyEventArgs e)
+        {
+            loadServices();
+
+        }
+
+        private void Birthdate_Checked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             loadServices();
 

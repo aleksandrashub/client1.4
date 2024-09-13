@@ -6,11 +6,13 @@
         x:Class="shubenokClient.AddClient"
         Title="AddClient">
     <Grid
-		Grid.ColumnDefinitions="*, *">
+		Grid.ColumnDefinitions="* ,*">
 		<StackPanel
-			HorizontalAlignment="Left"
+			
 			Margin="20, 20, 0, 0"
 			Orientation="Vertical"
+			HorizontalAlignment="Left"
+			
 			Grid.Column="0">
 			<TextBlock
 				Width="50"
@@ -65,17 +67,50 @@
 				Text="Мобильный телефон"
 				Width="180">
 			</TextBlock>
-			<TextBox
-				Name="phone"
-				Margin="0, 0, 0, 10"
-				Watermark="Мобильный телефон"
-				Width="180">
-			</TextBox>
+			<TextBlock
+				Width="180"
+				Margin="0, 0, 0, 5"
+				TextAlignment="Justify"
+				TextWrapping="Wrap"
+				Text="Выберите маску оператора (количество цифр):">
+			</TextBlock>
+			<ComboBox
+				SelectedIndex="0"
+				Name="phoneMask"
+				Margin="0, 0, 0, 5"
+				MaxDropDownHeight="60">
+				<ComboBoxItem>2</ComboBoxItem>
+				<ComboBoxItem>3</ComboBoxItem>
+				<ComboBoxItem>4</ComboBoxItem>
+			</ComboBox>
+
+			<MaskedTextBox 
+				Name="maskTwo"
+				Height="40"
+				Width="250"
+				Mask="0(00)000-00-00">
+			</MaskedTextBox>
+			<MaskedTextBox 
+				Name="maskThree"
+				Height="40"
+				Width="250"
+				Mask="0(000)000-00-00">
+			</MaskedTextBox>
+			<MaskedTextBox 
+				Name="maskFour"
+				Height="40"
+				Width="250"
+				Mask="0(0000)000-00-00">
+			</MaskedTextBox>
+			
+			
+			
 			<Button 
 				Content="Готово"
 				Click="OkBtn_Click">
 			</Button>
 		</StackPanel>
+		
 		<StackPanel 
 			Orientation="Vertical"
 			HorizontalAlignment="Left"

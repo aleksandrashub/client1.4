@@ -21,7 +21,9 @@
 			<CheckBox
 				Margin="0, 10, 0, 0"
 				IsChecked="False"
+				Checked="Birthdate_Checked"
 				Name="birthdayCurrMonth">
+				
 				День рождения в текущем месяце
 			</CheckBox>
 			<TextBlock
@@ -307,6 +309,7 @@
 							Grid.Row="0"
 							VerticalAlignment="Bottom">
 							<Button
+								Tag="{Binding IdClient}"
 								Content="Редактировать"
 								Name="editBtn"
 								Click="EditClientBtn_OnClick">
@@ -317,6 +320,7 @@
 							Grid.Row="1"
 							VerticalAlignment="Top">
 							<Button
+								Tag="{Binding IdClient}"
 								Content="Удалить"
 								Name="deleteBtn"
 								Click="DeleteClientBtn_OnClick">

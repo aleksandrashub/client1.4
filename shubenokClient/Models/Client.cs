@@ -5,8 +5,6 @@ namespace shubenokClient.Models;
 
 public partial class Client
 {
-    public long IdClient { get; set; }
-
     public string? NameClient { get; set; }
 
     public string? SurnameCl { get; set; }
@@ -24,6 +22,8 @@ public partial class Client
     public string? Mail { get; set; }
 
     public DateOnly? DateReg { get; set; }
+
+    public int IdClient { get; set; }
 
     public virtual ICollection<ClientFile> ClientFiles { get; set; } = new List<ClientFile>();
 
